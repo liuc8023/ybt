@@ -8,6 +8,7 @@
 <jsp:include page="/common.jsp" flush="true" />
 <link rel="stylesheet"
 	href="${ctx}/static/adminlte/dist/css/AdminLTE.min.css">
+<script src="${ctx}/static/adminlte/dist/js/app.min.js"></script>
 
 <section class="content-header">
 	<h1>
@@ -113,7 +114,6 @@
 
 <script>
     $(function () {
-
         //绑定按钮事件
         $("button[data-btn-type]").click(function () {
             var action = $(this).data("btn-type");
