@@ -25,7 +25,7 @@
 			<div class="ibox-content">
 				<div class="form-group">
 					<button id="btnAdd" type="button" class="btn btn-primary "
-						onclick="addModel()">
+						onclick="addfunc()">
 						<i class="fa fa-plus"></i>&nbsp;添加
 					</button>
 					<button id="btnEdit" type="button" class="btn btn-info "

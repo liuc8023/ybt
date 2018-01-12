@@ -103,3 +103,7 @@ function init() {
 		      });
 		   });
 }
+
+function addfunc(){
+	window.location.href=ctx+'/menu/turnToAddMenu'; 
+}

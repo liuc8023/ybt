@@ -18,6 +18,9 @@ import com.google.gson.Gson;
 import com.springboot.ybt.system.entity.SysMenu;
 import com.springboot.ybt.system.service.SysMenuService;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 /**
  * <p>
  * 菜单控制器
@@ -28,39 +31,48 @@ import com.springboot.ybt.system.service.SysMenuService;
  */
 @Controller
 @RequestMapping(value = "menu")
+@Api(value = "菜单controller", tags = { "菜单操作接口" })
 public class MenuController {
 	private static Logger logger = LoggerFactory.getLogger(MenuController.class);
 	@Autowired
 	SysMenuService sysMenuService;
-	
-	private String resultTree;// 我要返回给页面的List
-	
-	//跳转到role管理页面
-		@RequestMapping(value="list")
-		public String turnToMenuList() {
-			return "system/menu/menuList";
-		}
 
-    @RequestMapping(value = "/returnTree", method = { RequestMethod.POST, RequestMethod.GET })
-    @ResponseBody
-    public String getAll() {
-    	System.out.println("获取菜单");
-    	List<SysMenu> list =sysMenuService.getAll();
-    	Gson gson = new Gson();
+	private String resultTree;// 我要返回给页面的List
+
+	@ApiOperation(hidden = true, value = "跳转到menu管理页面")
+	@RequestMapping(value = "list")
+	public String turnToMenuList() {
+		return "system/menu/menuList";
+	}
+	
+
+	@ApiOperation(hidden = true, value = "跳转到menu新增页面")
+	@RequestMapping(value = "turnToAddMenu")
+	public String turnToAddMenu() {
+		return "system/menu/addMenu";
+	}
+
+
+	@RequestMapping(value = "/returnTree", method = { RequestMethod.POST, RequestMethod.GET })
+	@ResponseBody
+	public String getAll() {
+		logger.info("获取菜单");
+		List<SysMenu> list = sysMenuService.getAll();
+		Gson gson = new Gson();
 		String jsonString = gson.toJson(list);
 		resultTree = jsonString;// 给result赋值，传递给页面
-		logger.info("resultTree:"+resultTree);
+		logger.info("resultTree:" + resultTree);
 		return resultTree;
-    }
-    
+	}
+
 	@RequestMapping(value = "getMenuList", method = RequestMethod.GET)
 	@ResponseBody
-	public PageInfo<SysMenu> getMenuList(String rows, String page, SysMenu sysMenu,HttpServletRequest request) {
+	public PageInfo<SysMenu> getMenuList(String rows, String page, SysMenu sysMenu, HttpServletRequest request) {
 		logger.info("获得菜单信息列表!");
 		String sidx = request.getParameter("sidx");
-		String sord = request.getParameter("sord");//来获得排序方式
-		logger.info("排序的列名:"+sidx);
-		logger.info("排序方式:"+sord);
+		String sord = request.getParameter("sord");// 来获得排序方式
+		logger.info("排序的列名:" + sidx);
+		logger.info("排序方式:" + sord);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("sysMenu", sysMenu);
 		map.put("pageSize", rows);
@@ -70,7 +82,7 @@ public class MenuController {
 		PageInfo<SysMenu> searchSysMenuInfo = sysMenuService.getMenuList(map);
 		return searchSysMenuInfo;
 	}
-    
+
 	public String getResultTree() {
 		return resultTree;
 	}
