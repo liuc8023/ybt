@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.ybt.toolkit.dao.SysMessageMapper">
+	<resultMap id="BaseResultMap" type="com.springboot.ybt.toolkit.entity.SysMessage">
+		<!-- WARNING - @mbg.generated -->
+		<id column="id" jdbcType="VARCHAR" property="id" />
+		<result column="createDateTime" jdbcType="TIMESTAMP" property="createdatetime" />
+		<result column="deleted" jdbcType="INTEGER" property="deleted" />
+		<result column="updateDateTime" jdbcType="TIMESTAMP" property="updatedatetime" />
+		<result column="version" jdbcType="INTEGER" property="version" />
+		<result column="messageFlag" jdbcType="VARCHAR" property="messageflag" />
+		<result column="messageStatus" jdbcType="VARCHAR" property="messagestatus" />
+		<result column="messageType" jdbcType="VARCHAR" property="messagetype" />
+		<result column="sendSubject" jdbcType="VARCHAR" property="sendsubject" />
+		<result column="sendTime" jdbcType="TIMESTAMP" property="sendtime" />
+		<result column="sendUser" jdbcType="VARCHAR" property="senduser" />
+		<result column="sendUserID" jdbcType="VARCHAR" property="senduserid" />
+		<result column="receiverType" jdbcType="VARCHAR" property="receivertype" />
+		<result column="receiveUsers" jdbcType="LONGVARCHAR" property="receiveusers" />
+		<result column="remark" jdbcType="LONGVARCHAR" property="remark" />
+		<result column="sendContent" jdbcType="LONGVARCHAR" property="sendcontent" />
+		<result column="fileIds" jdbcType="LONGVARCHAR" property="fileids" />
+		<result column="receiverIds" jdbcType="LONGVARCHAR" property="receiverids" />
+	</resultMap>
+
+	<select id="getMessageCount" resultType="java.lang.Integer"
+		parameterType="String">
+		select count(id) from sys_message where
+		sendUserID=#{sendUserID}
+	</select>
+</mapper>

@@ -1,0 +1,4 @@
+layer弹出层颜色：
+skin: 'layui-layer-lan'（深蓝）
+skin: 'layui-layer-molv' //样式类名,	墨绿深蓝风
+

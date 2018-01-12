@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.ybt.toolkit.dao.SysMessageReceiverMapper">
+	<resultMap id="BaseResultMap"
+		type="com.springboot.ybt.toolkit.entity.SysMessageReceiver">
+		<!-- WARNING - @mbg.generated -->
+		<id column="id" jdbcType="VARCHAR" property="id" />
+		<result column="createDateTime" jdbcType="TIMESTAMP" property="createdatetime" />
+		<result column="deleted" jdbcType="INTEGER" property="deleted" />
+		<result column="updateDateTime" jdbcType="TIMESTAMP" property="updatedatetime" />
+		<result column="version" jdbcType="INTEGER" property="version" />
+		<result column="isRead" jdbcType="VARCHAR" property="isread" />
+		<result column="messageFlag" jdbcType="VARCHAR" property="messageflag" />
+		<result column="messageType" jdbcType="VARCHAR" property="messagetype" />
+		<result column="readTime" jdbcType="TIMESTAMP" property="readtime" />
+		<result column="receiveAddress" jdbcType="VARCHAR" property="receiveaddress" />
+		<result column="receiveUserID" jdbcType="VARCHAR" property="receiveuserid" />
+		<result column="message" jdbcType="VARCHAR" property="message" />
+		<result column="readYet" jdbcType="VARCHAR" property="readyet" />
+		<result column="remark" jdbcType="LONGVARCHAR" property="remark" />
+	</resultMap>
+</mapper>

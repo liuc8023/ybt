@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.springboot.ybt.system.dao.SysLogMapper">
+	<resultMap id="BaseResultMap" type="com.springboot.ybt.system.entity.SysLog">
+		<!-- WARNING - @mbg.generated -->
+		<id column="id" jdbcType="VARCHAR" property="id" />
+		<result column="description" jdbcType="VARCHAR" property="description" />
+		<result column="method" jdbcType="VARCHAR" property="method" />
+		<result column="type" jdbcType="VARCHAR" property="type" />
+		<result column="requestip" jdbcType="VARCHAR" property="requestip" />
+		<result column="exceptioncode" jdbcType="VARCHAR" property="exceptioncode" />
+		<result column="executetime" jdbcType="VARCHAR" property="executetime" />
+		<result column="params" jdbcType="VARCHAR" property="params" />
+		<result column="operator" jdbcType="VARCHAR" property="operator" />
+		<result column="createDateTime" jdbcType="TIMESTAMP" property="createDateTime" />
+	</resultMap>
+
+	<select id="getAll" parameterType="String" resultMap="BaseResultMap">
+		select *
+		from sys_log ORDER BY createDateTime desc
+	</select>
+</mapper>
