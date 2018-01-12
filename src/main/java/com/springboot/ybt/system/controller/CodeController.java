@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.springboot.ybt.util.ImageUtil;
 
-
-
 /**
  * 获取验证码图片和文本(验证码文本会保存在HttpSession中)
  * 
@@ -25,8 +23,7 @@ import com.springboot.ybt.util.ImageUtil;
 public class CodeController {
 
 	@RequestMapping("/getGifCode")
-	public void getGifCode(HttpServletRequest req, HttpServletResponse resp)
-			throws IOException {
+	public void getGifCode(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 		HttpSession session = req.getSession();
 		Map<String, BufferedImage> map = ImageUtil.createImage();
 		String imageCode = map.keySet().iterator().next();

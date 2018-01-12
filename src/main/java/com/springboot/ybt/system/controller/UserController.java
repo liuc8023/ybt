@@ -29,7 +29,7 @@ import io.swagger.annotations.ApiOperation;
  * @author liuc
  * @since 2017-12-11
  */
-@Api(value="用户controller",tags={"用户操作接口"})
+@Api(value = "用户controller", tags = { "用户操作接口" })
 @Controller
 @RequestMapping(value = "user")
 public class UserController {
@@ -37,27 +37,29 @@ public class UserController {
 	@Autowired
 	SysUserService sysUserService;
 
+	@ApiOperation(hidden = true, value = "跳转到用户列表页面")
 	@RequestMapping(value = "list", method = RequestMethod.GET)
 	public String userList() {
 		logger.info("跳转到用户列表页面");
 		return "system/user/userList";
 	}
+
 	@RequestMapping(value = "turnToAddUser", method = RequestMethod.GET)
 	public String turnToAddUser() {
 		logger.info("跳转到新增用户页面");
 		return "system/user/addUser";
 	}
 
-	@ApiOperation(value="获取用户列表", notes="获取用户列表")
+	@ApiOperation(value = "获取用户列表", notes = "获取用户列表")
 	@RequestMapping(value = "getUserList", method = RequestMethod.GET)
 	@ResponseBody
 	@Cacheable(value = "user-cache") // 设置缓存的名称,也可以通过key属性指定缓存的key,keyGenerator指定key生成策略器（keyGenerator一般推荐在重写CachingConfigurerSupport类里面的方法适合全局指定）
-	public PageInfo<SysUser> getTopUserinfoList(String rows, String page, SysUser sysUser,HttpServletRequest request) {
+	public PageInfo<SysUser> getTopUserinfoList(String rows, String page, SysUser sysUser, HttpServletRequest request) {
 		logger.info("获得用户信息列表!");
 		String sidx = request.getParameter("sidx");
-		String sord = request.getParameter("sord");//来获得排序方式
-		logger.info("排序的列名:"+sidx);
-		logger.info("排序方式:"+sord);
+		String sord = request.getParameter("sord");// 来获得排序方式
+		logger.info("排序的列名:" + sidx);
+		logger.info("排序方式:" + sord);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("sysUser", sysUser);
 		map.put("pageSize", rows);
@@ -76,7 +78,7 @@ public class UserController {
 	}
 
 	// 在线用户列表json
-	@ApiOperation(value="获取在线用户列表", notes="获取在线用户列表")
+	@ApiOperation(value = "获取在线用户列表", notes = "获取在线用户列表")
 	@RequestMapping(value = "onlineUsers")
 	@ResponseBody
 	public PageInfo<UserOnlineBo> getTopUserinfoList() {

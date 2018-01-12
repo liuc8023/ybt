@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiOperation;
  * @author liuc
  * @since 2017-12-29
  */
-@Api(value="操作日志controller",tags={"日志操作接口"})
+@Api(value = "操作日志controller", tags = { "日志操作接口" })
 @Controller
 @RequestMapping(value = "log")
 public class LogController {
@@ -39,16 +39,16 @@ public class LogController {
 		logger.info("跳转到操作日志列表页面");
 		return "system/log/logList";
 	}
-	
-	@ApiOperation(value="获取用户列表", notes="获取用户列表")
+
+	@ApiOperation(value = "获取用户列表", notes = "获取用户列表")
 	@RequestMapping(value = "getLogList", method = RequestMethod.GET)
 	@ResponseBody
-	public PageInfo<SysLog> getLogList(String rows, String page, SysLog sysLog,HttpServletRequest request) {
+	public PageInfo<SysLog> getLogList(String rows, String page, SysLog sysLog, HttpServletRequest request) {
 		logger.info("获得用户信息列表!");
 		String sidx = request.getParameter("sidx");
-		String sord = request.getParameter("sord");//来获得排序方式
-		logger.info("排序的列名:"+sidx);
-		logger.info("排序方式:"+sord);
+		String sord = request.getParameter("sord");// 来获得排序方式
+		logger.info("排序的列名:" + sidx);
+		logger.info("排序方式:" + sord);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("sysLog", sysLog);
 		map.put("pageSize", rows);
