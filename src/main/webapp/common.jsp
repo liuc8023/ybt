@@ -52,13 +52,10 @@
 <script
 	src="${ctx}/static/adminlte/plugins/bootstrap-treeview/bootstrap-treeview.min.js"></script>
 <script src="${ctx}/static/common/js/base-message.js"></script>
-<script src="${ctx}/static/common/js/base.js"></script>
-
 <script src="${ctx}/static/common/js/dataTables.js"></script>
 <script src="${ctx}/static/adminlte/plugins/iCheck/icheck.min.js"></script>
 <script src="${ctx}/static/js/content/base.js"></script>
 <script src="${ctx}/static/js/content/list.js"></script>
-<script src="${ctx}/static/common/js/base-message.js"></script>
 
 
 <script type="text/javascript">
