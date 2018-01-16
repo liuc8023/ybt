@@ -26,7 +26,7 @@
 	href="${ctx}/static/adminlte/plugins/datepicker/datepicker3.css">
 <link rel="stylesheet"
 	href="${ctx}/static/adminlte/plugins/iCheck/all.css">
-
+<link rel="stylesheet" href="${ctx }/static/adminlte/plugins/select2/css/select2.min.css" />
 
 <!-- jQuery 2.2.3 -->
 <script src="${ctx}/static/adminlte/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -59,6 +59,8 @@
 <script src="${ctx}/static/js/content/base.js"></script>
 <script src="${ctx}/static/js/content/list.js"></script>
 <script src="${ctx}/static/common/js/base-message.js"></script>
+<script src="${ctx}/static/adminlte/plugins/select2/js/select2.full.min.js"></script>
+<script src="${ctx}/static/adminlte/plugins/select2/js/i18n/zh-CN.js"></script>
 
 
 <script type="text/javascript">

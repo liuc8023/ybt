@@ -6,246 +6,242 @@ import javax.persistence.*;
 
 @Table(name = "sys_menu")
 public class SysMenu implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String id;
 
-    @Column(name = "createDateTime")
-    private Date createDateTime;
+	@Column(name = "createDateTime")
+	private Date createDateTime;
 
-    private Integer deleted;
+	private Integer deleted;
 
-    @Column(name = "updateDateTime")
-    private Date updateDateTime;
+	@Column(name = "updateDateTime")
+	private Date updateDateTime;
 
-    private Integer version;
+	private Integer version;
 
-    private String code;
+	private String code;
 
-    private String functype;
+	private String functype;
 
-    private String icon;
-    
-    /**
-     * 层级编码
-     */
-    @Column(name = "levelCode")
-    private String levelcode;
+	private String icon;
 
-    private String name;
+	/**
+	 * 层级编码
+	 */
+	@Column(name = "levelCode")
+	private String levelcode;
 
-    @Column(name = "parentId")
-    private String parentId;
+	private String name;
 
-    private String url;
+	@Column(name = "parentId")
+	private String parentId;
 
-    private String remark;
+	private String url;
 
-    private static final long serialVersionUID = 1L;
+	private String remark;
 
-    /**
-     * @return id
-     */
-    public String getId() {
-        return id;
-    }
+	@Column(name = "parentName")
+	private String parentName;
 
-    /**
-     * @param id
-     */
-    public void setId(String id) {
-        this.id = id == null ? null : id.trim();
-    }
+	private static final long serialVersionUID = 1L;
 
-    /**
-     * @return create_date_time
-     */
-    public Date getCreateDateTime() {
-        return createDateTime;
-    }
+	/**
+	 * @return id
+	 */
+	public String getId() {
+		return id;
+	}
 
-    /**
-     * @param createDateTime
-     */
-    public void setCreateDateTime(Date createDateTime) {
-        this.createDateTime = createDateTime;
-    }
+	/**
+	 * @param id
+	 */
+	public void setId(String id) {
+		this.id = id == null ? null : id.trim();
+	}
 
-    /**
-     * @return deleted
-     */
-    public Integer getDeleted() {
-        return deleted;
-    }
+	/**
+	 * @return create_date_time
+	 */
+	public Date getCreateDateTime() {
+		return createDateTime;
+	}
 
-    /**
-     * @param deleted
-     */
-    public void setDeleted(Integer deleted) {
-        this.deleted = deleted;
-    }
+	/**
+	 * @param createDateTime
+	 */
+	public void setCreateDateTime(Date createDateTime) {
+		this.createDateTime = createDateTime;
+	}
 
-    /**
-     * @return update_date_time
-     */
-    public Date getUpdateDateTime() {
-        return updateDateTime;
-    }
+	/**
+	 * @return deleted
+	 */
+	public Integer getDeleted() {
+		return deleted;
+	}
 
-    /**
-     * @param updateDateTime
-     */
-    public void setUpdateDateTime(Date updateDateTime) {
-        this.updateDateTime = updateDateTime;
-    }
+	/**
+	 * @param deleted
+	 */
+	public void setDeleted(Integer deleted) {
+		this.deleted = deleted;
+	}
 
-    /**
-     * @return version
-     */
-    public Integer getVersion() {
-        return version;
-    }
+	/**
+	 * @return update_date_time
+	 */
+	public Date getUpdateDateTime() {
+		return updateDateTime;
+	}
 
-    /**
-     * @param version
-     */
-    public void setVersion(Integer version) {
-        this.version = version;
-    }
+	/**
+	 * @param updateDateTime
+	 */
+	public void setUpdateDateTime(Date updateDateTime) {
+		this.updateDateTime = updateDateTime;
+	}
 
-    /**
-     * @return code
-     */
-    public String getCode() {
-        return code;
-    }
+	/**
+	 * @return version
+	 */
+	public Integer getVersion() {
+		return version;
+	}
 
-    /**
-     * @param code
-     */
-    public void setCode(String code) {
-        this.code = code == null ? null : code.trim();
-    }
+	/**
+	 * @param version
+	 */
+	public void setVersion(Integer version) {
+		this.version = version;
+	}
 
-    /**
-     * @return functype
-     */
-    public String getFunctype() {
-        return functype;
-    }
+	/**
+	 * @return code
+	 */
+	public String getCode() {
+		return code;
+	}
 
-    /**
-     * @param functype
-     */
-    public void setFunctype(String functype) {
-        this.functype = functype == null ? null : functype.trim();
-    }
+	/**
+	 * @param code
+	 */
+	public void setCode(String code) {
+		this.code = code == null ? null : code.trim();
+	}
 
-    /**
-     * @return icon
-     */
-    public String getIcon() {
-        return icon;
-    }
+	/**
+	 * @return functype
+	 */
+	public String getFunctype() {
+		return functype;
+	}
 
-    /**
-     * @param icon
-     */
-    public void setIcon(String icon) {
-        this.icon = icon == null ? null : icon.trim();
-    }
+	/**
+	 * @param functype
+	 */
+	public void setFunctype(String functype) {
+		this.functype = functype == null ? null : functype.trim();
+	}
 
-    /**
-     * @return levelCode
-     */
-    public String getLevelcode() {
-        return levelcode;
-    }
+	/**
+	 * @return icon
+	 */
+	public String getIcon() {
+		return icon;
+	}
 
-    /**
-     * @param levelcode
-     */
-    public void setLevelcode(String levelcode) {
-        this.levelcode = levelcode == null ? null : levelcode.trim();
-    }
+	/**
+	 * @param icon
+	 */
+	public void setIcon(String icon) {
+		this.icon = icon == null ? null : icon.trim();
+	}
 
-    /**
-     * @return name
-     */
-    public String getName() {
-        return name;
-    }
+	/**
+	 * @return levelCode
+	 */
+	public String getLevelcode() {
+		return levelcode;
+	}
 
-    /**
-     * @param name
-     */
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	/**
+	 * @param levelcode
+	 */
+	public void setLevelcode(String levelcode) {
+		this.levelcode = levelcode == null ? null : levelcode.trim();
+	}
 
-    /**
-     * @return parent_id
-     */
-    public String getParentId() {
-        return parentId;
-    }
+	/**
+	 * @return name
+	 */
+	public String getName() {
+		return name;
+	}
 
-    /**
-     * @param parentId
-     */
-    public void setParentId(String parentId) {
-        this.parentId = parentId == null ? null : parentId.trim();
-    }
+	/**
+	 * @param name
+	 */
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    /**
-     * @return url
-     */
-    public String getUrl() {
-        return url;
-    }
+	/**
+	 * @return parent_id
+	 */
+	public String getParentId() {
+		return parentId;
+	}
 
-    /**
-     * @param url
-     */
-    public void setUrl(String url) {
-        this.url = url == null ? null : url.trim();
-    }
+	/**
+	 * @param parentId
+	 */
+	public void setParentId(String parentId) {
+		this.parentId = parentId == null ? null : parentId.trim();
+	}
 
-    /**
-     * @return remark
-     */
-    public String getRemark() {
-        return remark;
-    }
+	/**
+	 * @return url
+	 */
+	public String getUrl() {
+		return url;
+	}
 
-    /**
-     * @param remark
-     */
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
+	/**
+	 * @param url
+	 */
+	public void setUrl(String url) {
+		this.url = url == null ? null : url.trim();
+	}
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", createDateTime=").append(createDateTime);
-        sb.append(", deleted=").append(deleted);
-        sb.append(", updateDateTime=").append(updateDateTime);
-        sb.append(", version=").append(version);
-        sb.append(", code=").append(code);
-        sb.append(", functype=").append(functype);
-        sb.append(", icon=").append(icon);
-        sb.append(", levelcode=").append(levelcode);
-        sb.append(", name=").append(name);
-        sb.append(", parentId=").append(parentId);
-        sb.append(", url=").append(url);
-        sb.append(", remark=").append(remark);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
+	/**
+	 * @return remark
+	 */
+	public String getRemark() {
+		return remark;
+	}
+
+	/**
+	 * @param remark
+	 */
+	public void setRemark(String remark) {
+		this.remark = remark == null ? null : remark.trim();
+	}
+
+	public String getParentName() {
+		return parentName;
+	}
+
+	public void setParentName(String parentName) {
+		this.parentName = parentName;
+	}
+
+	@Override
+	public String toString() {
+		return "SysMenu [id=" + id + ", createDateTime=" + createDateTime + ", deleted=" + deleted + ", updateDateTime="
+				+ updateDateTime + ", version=" + version + ", code=" + code + ", functype=" + functype + ", icon="
+				+ icon + ", levelcode=" + levelcode + ", name=" + name + ", parentId=" + parentId + ", url=" + url
+				+ ", remark=" + remark + ", parentName=" + parentName + "]";
+	}
+
 }

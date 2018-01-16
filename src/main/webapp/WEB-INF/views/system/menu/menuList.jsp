@@ -29,11 +29,11 @@
 						<i class="fa fa-plus"></i>&nbsp;添加
 					</button>
 					<button id="btnEdit" type="button" class="btn btn-info "
-						onclick="editModel()">
+						onclick="editfunc()">
 						<i class="fa fa-pencil"></i> 编辑
 					</button>
 					<button id="btnDel" type="button" class="btn btn-danger "
-						onclick="delData()">
+						onclick="delfunc()">
 						<i class="fa fa-remove"></i>&nbsp;&nbsp;<span class="bold">删除</span>
 					</button>
 				</div>

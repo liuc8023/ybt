@@ -14,10 +14,20 @@
 		<result column="levelCode" jdbcType="VARCHAR" property="levelcode" />
 		<result column="name" jdbcType="VARCHAR" property="name" />
 		<result column="parentId" jdbcType="VARCHAR" property="parentId" />
+		<result column="parentName" jdbcType="VARCHAR" property="parentName" />
 		<result column="url" jdbcType="VARCHAR" property="url" />
 		<result column="remark" jdbcType="LONGVARCHAR" property="remark" />
 	</resultMap>
 	<select id="getAll" resultMap="BaseResultMap" parameterType="String">
 		SELECT * FROM sys_menu order by levelCode asc
+	</select>
+	
+	<select id="getMenuTree" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		SELECT * FROM sys_menu where 1=1
+		<if test="_parameter != null and _parameter !=''">
+	    	AND name like  '%${_parameter}%'
+	    </if>  
+	    order by levelCode asc
 	</select>
 </mapper>
